@@ -65,8 +65,9 @@
     rgba(255, 255, 255, 0)
   );
   --bs-body-font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  --bs-body-font-size: 1.5rem;
-  --bs-body-font-weight: 400;
+  --bs-body-font-size: 1.2rem;
+  --bs-bodyp-font-size: 1rem;
+  --bs-body-font-weight: 900;
   --bs-body-line-height: 1.75;
   --bs-body-color: #212529;
   --bs-body-bg: #fff;
@@ -143,6 +144,7 @@ a:hover {
   align-items: center; 
   text-decoration: none; 
   background-color: black;
+  border: none;
 }
 
 /* Skip links styling */
@@ -213,7 +215,7 @@ a:hover {
   
 }
 .hero-banner__content p {
-  font-size: var(--bs-body-font-size);
+  font-size: var(--bs-bodyp-font-size);
   color: white;
   font-family: var(--bs-body-font-family);
   margin-bottom: 0;
@@ -273,4 +275,50 @@ a:hover {
 svg {
   background-color: var(--bs-black);
   fill: white;
+}
+
+/* main */
+main{
+  margin:0 auto;
+  padding: 0 20px;
+}
+.introtitle{
+  font-size: 2rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.introdescript{
+  padding-bottom: 20px;
+}
+.infoTitle{
+  color:black;
+}
+.infodescript{
+  padding-bottom: 20px;
+}
+/* footer */
+footer{
+  margin: 0 auto;
+  padding: 20px 20px 0 20px;
+  background-image: url('https://byui-cse.github.io/wdd231-course/images/topo_pattern.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.contact h3{
+  font-family: 'Courier New', Courier, monospace;
+}
+.contactinfo h4{
+  font-weight: var(--bs-body-font-weight);
+}
+
+@media screen and (min-width: 1200px){
+  .info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+  }
+  .infocontent{
+    width: 30%;
+  }
 }
