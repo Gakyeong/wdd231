@@ -1,4 +1,4 @@
-// import { park, parkInfoLinks} from "./parkService.mjs";
+import { park, parkInfoLinks} from "./parkService.mjs";
 import { getParkData } from './parkService.mjs';
 
 import { introTemplate, mediaCardTemplate, getmediacardList} from "./templete.mjs";
@@ -13,6 +13,14 @@ function setIntroInfo(data){
 }
 
 // setIntroInfo(parkData);
+
+function getmediacardList(data) {
+    const withUpdatedImages = parkInfoLinks.map((item, index) => {
+        item.image = data[index + 2].url;
+        return item;
+      });
+      return withUpdatedImages;
+}
 
 function setmediaCardInfo(parklinkList) {
     const cardElement = document.querySelector('.info');
