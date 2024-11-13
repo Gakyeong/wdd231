@@ -1,3 +1,4 @@
+import {parkInfoLinks} from "./parkService.mjs"
 
 function introTemplate(info){
 return `
@@ -10,7 +11,7 @@ function mediaCardTemplate(info) {
     return `
         <div class="infocontent">
         <a href= ${info.link}>
-        <img src=${info.image} alt="${info.name}" />
+        <img src=${getmediacardList(info.image)} alt="${info.name}" />
         </a>
         <a href= ${info.link}> 
             <h2 class= infoTitle> ${info.name} </h2>
@@ -20,4 +21,11 @@ function mediaCardTemplate(info) {
     `
 }
 
-export {introTemplate, mediaCardTemplate};
+function getmediacardList(data) {
+    const withUpdatedImages = parkInfoLinks.map((item, index) => {
+        item.image = data[index + 2].url;
+        return item;
+      });
+      return withUpdatedImages;
+}
+export {introTemplate, mediaCardTemplate, getmediacardList};

@@ -223,7 +223,7 @@ export async function getParkData() {
     }
   };
   let data = {};
-  const response = await fetch(baseUrl + "parks" + "?parkCode=yell", options);
+  const response = await fetch(baseUrl + "parks" + "?parkCode=glac", options);
   // check to make sure the reponse was ok.
   if (response.ok) {
     // convert to JSON
@@ -233,4 +233,4 @@ export async function getParkData() {
   
 }
 
-// export {park, parkInfoLinks};
+export {park, parkInfoLinks};
