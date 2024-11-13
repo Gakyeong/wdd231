@@ -1,4 +1,4 @@
-import { park, parkInfoLinks} from "./parkService.mjs";
+// import { park, parkInfoLinks} from "./parkService.mjs";
 import { getParkData } from './parkService.mjs';
 
 import { introTemplate, mediaCardTemplate, getmediacardList} from "./templete.mjs";
