@@ -1,7 +1,7 @@
 import { park, parkInfoLinks} from "./parkService.mjs";
 import { getParkData } from './parkService.mjs';
 
-import { introTemplate, mediaCardTemplate, getmediacardList} from "./templete.mjs";
+import { introTemplate, mediaCardTemplate} from "./templete.mjs";
 import {setHeaderInfo, setfooterInfo} from "./setHeaderFooter.mjs";
 
 // setHeaderInfo(parkData);
@@ -11,21 +11,20 @@ function setIntroInfo(data){
     const introHtml = introTemplate(data);
     introElement.innerHTML = introHtml;
 }
-
 // setIntroInfo(parkData);
 
-function getmediacardList(data) {
+function getmediacardLinks(data) {
     const withUpdatedImages = parkInfoLinks.map((item, index) => {
         item.image = data[index + 2].url;
         return item;
       });
-      return withUpdatedImages;
-}
+    return withUpdatedImages;
+  }
 
 function setmediaCardInfo(parklinkList) {
     const cardElement = document.querySelector('.info');
-    // const cardHtml = parklinkList.map(mediaCardTemplate).join('');
-    const cardHtml = mediaCardTemplate(parklinkList);
+    const cardHtml = parklinkList.map(mediaCardTemplate).join('');
+    // const cardHtml = mediaCardTemplate(parklinkList);
     cardElement.innerHTML = cardHtml;
 }
 // setmediaCardInfo(parkData);
@@ -34,7 +33,7 @@ function setmediaCardInfo(parklinkList) {
 
 async function init() {
     const parkData = await getParkData();
-    const links = getmediacardList(parkData.images);
+    const links = getmediacardLinks(parkData.images);
 
     setHeaderInfo(parkData);
     setIntroInfo(parkData);
