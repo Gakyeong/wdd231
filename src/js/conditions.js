@@ -9,14 +9,18 @@ const AlertData = await getAlertData();
 setHeaderInfo(parkData);
 setfooterInfo(parkData);
 
-function alerttype(alert){
-    let alerttype = '';
-    if (alert.category == 'Park Closure') {
-        alerttype = 'closure'
-    }
-    else {
-        alerttype = alert.category.toLowerCase();
-    }
+function alerttype(data) {
+    return data.map(item => {
+        let alerttype = '';
+
+        if (item.category === 'Park Closure') {
+            alerttype = 'closure';
+        } 
+        else {
+            alerttype = item.category.toLowerCase();
+        }
+        return alerttype;
+    });
 }
 
 function alertsTemplate(alert) {
@@ -34,7 +38,6 @@ function alertsTemplate(alert) {
 function setAlertinfo(alertinfolist) {
     const alertElement = document.querySelector('.alert');
     const alertHtml = alertinfolist.map(alertsTemplate).join('');
-    // const alertHtml = alertsTemplate(alertinfolist);
     alertElement.innerHTML = alertHtml;
 }   
 

@@ -248,7 +248,7 @@ export async function getParkData() {
 
 export async function getAlertData() { 
   const AlertData = await getJson("alerts?parkCode=glac");
-  return AlertData.data[0];
+  return AlertData.data;
 }
 
 
