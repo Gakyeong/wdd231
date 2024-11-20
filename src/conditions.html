@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
     <link rel="stylesheet" href="css/style.css" />
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/conditions.js"></script>
   </head>
   <body>
     <p class="disclaimer">
@@ -85,7 +85,7 @@
         <nav class="park-nav">
             <ul>
             <li>
-                <a href="conditions.html">
+                <a href="#">
                 <span>Info</span>
                 <svg class="icon" role="presentation" focusable="false">
                     <use
@@ -96,7 +96,7 @@
                 </a>
             </li>
             <li>
-                <a href="conditions.html">
+                <a href="#">
                 <span>Alerts</span>
                 <svg class="icon" role="presentation" focusable="false">
                     <use
@@ -145,19 +145,26 @@
     </header>
   
     <main id="main">
-      <section class = "intro">
-
+      <h1>Current Conditions</h1>
+      <section class="alerts">
+        <h2>Alerts</h2>
+        <ul> </ul>
       </section>
-      <section class = "info">
-        <!-- <div class="info1">
 
-        </div>
-        <div class="info1">
+      <section class="visitorcontent">
+        <h2 class= "visitorTitle">Visitor Service </h2>
+        <details name="visitor">
+            <summary>Visitor Centers</summary>
+            <ul></ul>
+         </details>  
+      </section>
 
-        </div>
-        <div class="info1">
-
-        </div> -->
+      <section class = "activitiescontent">
+        <h2 class= "activityTitle">Activities </h2>
+        <details name="activity">
+            <summary>All Acitivities</summary>
+            <ul></ul>
+         </details>  
       </section>
 
     </main>

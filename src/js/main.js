@@ -42,3 +42,4 @@ async function init() {
   }
 init();
 
+export {init, setIntroInfo, getmediacardLinks, setmediaCardInfo };
