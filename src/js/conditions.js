@@ -2,6 +2,7 @@ import { setHeaderInfo, setfooterInfo } from "./setHeaderFooter.mjs";
 import { park, parkInfoLinks, getParkData, getAlertData, getVisitorCenterData } from "./parkService.mjs";
 import { introTemplate, mediaCardTemplate} from "./templete.mjs";
 import { init, setIntroInfo, getmediacardLinks, setmediaCardInfo } from "./main";
+import spritePath from '../images/sprite.symbol.svg';
 
 const parkData = await getParkData();
 const AlertData = await getAlertData();
@@ -26,7 +27,7 @@ function getAlertCategory(category) {
 function alertsTemplate(alert) {
     return `
         <li class="alert">
-            <svg class="icon" focusable="false" aria-hidden="true"><use xlink:href="/images/sprite.symbol.svg#alert-${getAlertCategory(alert.category)}"></use></svg>
+            <svg class="icon" focusable="false" aria-hidden="true"><use xlink:href="${spritePath}#alert-${getAlertCategory(alert.category)}"></use></svg>
             <div>
                 <h3>${alert.title}</h3> 
                 <p>${alert.description}</p>
