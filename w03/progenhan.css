@@ -1,0 +1,29 @@
+header{
+    background-color: greenyellow;
+}
+header h1, p{
+    color:white;
+    text-align: center;
+}
+main{
+    padding: 0 50px;
+
+}
+main h2 {
+    color: green;
+    border-bottom: 2px solid green; 
+}
+main h1,h2,p{
+    color:black;
+    text-align: left;
+}
+main ol, ul {
+    padding:0 20px;
+}
+footer{
+    background-color: black;
+}
+footer p {
+    color:white;
+    text-align: center;
+}

@@ -85,7 +85,6 @@
   --bs-link-hover-color: #003e6b;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
-
   --alert-closure: #cb2027;
   --alert-caution: #ed7e31;
   --alert-information: #2451a9;
@@ -328,6 +327,36 @@ footer{
 .alert-caution {
   color: var(--alert-caution);
 }
+.alertscontent ul{
+  list-style-type: none;
+  padding: 0;
+}
+.alert .icon{
+  background-color: white;
+  width: 30%;
+  padding-right: 30px;
+  
+}
+.alert{
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--bs-grey-3);  
+}
+/* how can I change h3 by alerts, icon background */
+
+/* visitor */
+.center{
+  border-bottom: 1px solid var(--bs-grey-3); 
+}
+.visitorcontent ul{
+  padding: 0;
+}
+
+/* activities */
+.activitiescontent ul{
+  padding-bottom: 10px;
+}
+
 @media screen and (min-width: 1200px){
   .info{
     display: flex;

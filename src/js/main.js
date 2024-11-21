@@ -7,9 +7,14 @@ import {setHeaderInfo, setfooterInfo} from "./setHeaderFooter.mjs";
 // setHeaderInfo(parkData);
 
 function setIntroInfo(data){
-    const introElement = document.querySelector('.intro');
-    const introHtml = introTemplate(data);
-    introElement.innerHTML = introHtml;
+    const introElement = document.querySelector('.introcontainer');
+  if (introElement) {
+      const introHtml = introTemplate(data);
+      introElement.innerHTML = introHtml;
+  }
+  else {
+      console.log("no introElement")
+  }
 }
 // setIntroInfo(parkData);
 
@@ -23,9 +28,13 @@ function getmediacardLinks(data) {
 
 function setmediaCardInfo(parklinkList) {
     const cardElement = document.querySelector('.info');
-    const cardHtml = parklinkList.map(mediaCardTemplate).join('');
-    // const cardHtml = mediaCardTemplate(parklinkList);
-    cardElement.innerHTML = cardHtml;
+    if (cardElement) {
+      const cardHtml = parklinkList.map(mediaCardTemplate).join('');
+      cardElement.innerHTML = cardHtml;
+    }
+    else {
+        console.log("no introElement")
+    }
 }
 // setmediaCardInfo(parkData);
 
