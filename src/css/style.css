@@ -116,40 +116,100 @@ a:hover {
   color: var(--bs-link-hover-color);
 
 }
+/* header */
 .global-header {
   background-color: var(--bs-black);
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+  flex-direction: row; 
 }
-.global-header h1{
+
+.global-header .site-title{
   color: white;
   font-size: var(--bs-body-font-size);
   font-family: var(--bs-body-font-family);
+
+  display: flex;
+  align-items: center;
+  margin:0 5px;
 }
-.global-header .icon {
-  width: 40px;
-  height: 40px;
-  padding-right: 5px;
-}
+
 .global-header__right{
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  margin-left: auto;
+  margin-right: 10px;
 }
-.global-header__right a, .global-header__right button {
+
+.global-header__right a, .global-header__right button{
   color: white;
   font-size: 18px; 
-  display: flex;
-  flex-direction: row; 
-  align-items: center; 
   text-decoration: none; 
   background-color: black;
   border: none;
 }
+
+.global-header .icon{
+  width: 40px;
+  height: 40px;
+  padding-right: 10px;
+}
+
+/* global-nav */
+.global-nav {
+  max-height: 0;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.5s;
+
+  color: white;
+  font-size: 18px; 
+  text-decoration: none; 
+  background-color: black;
+  border: none; 
+  padding-left: 10px;
+   
+}
+.global-nav a, .global-nav button{
+  color: white;
+  font-size: 18px; 
+  text-decoration: none; 
+  background-color: black;
+  border: none;
+  cursor: pointer;
+}
+.global-nav .icon{
+  width: 40px;
+  height: 40px;
+  padding-right: 5px;
+}
+.global-nav__toggle {
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+.global-nav__toggle--closed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.global-nav__toggle--open {
+  display: none;
+  align-items: center;
+}
+.global-nav__toggle[aria-expanded="true"] .global-nav__toggle--closed {
+  display: none;
+}
+.global-nav__toggle[aria-expanded="true"] .global-nav__toggle--open {
+  display: flex;
+}
+
+.global-nav.show {
+  max-height: 1000px;
+}
+
 
 /* Skip links styling */
 .skip-links ul {

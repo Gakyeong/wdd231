@@ -1,12 +1,12 @@
-function introTemplate(info){
-return `
+function introTemplate(info) {
+  return `
     <h1 class ="introtitle">${info.fullName} </h1>
     <p class ="introdescript">${info.description} </p>
-`
+`;
 }
 
 function mediaCardTemplate(info) {
-    return `
+  return `
         <div class="infocontent">
         <a href= ${info.link}>
         <img src=${info.image} alt="${info.name}" />
@@ -16,7 +16,7 @@ function mediaCardTemplate(info) {
         </a>
         <p class= infodescript>${info.description} </p>
         </div>
-    `
+    `;
 }
 
-export {introTemplate, mediaCardTemplate};
+export { introTemplate, mediaCardTemplate };

@@ -1,4 +1,4 @@
-import { setHeaderInfo, setfooterInfo } from "./setHeaderFooter.mjs";
+import { setHeaderInfo, setfooterInfo, park } from "./setHeaderFooter.mjs";
 import {
   getParkData,
   getAlertData,

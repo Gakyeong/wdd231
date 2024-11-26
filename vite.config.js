@@ -8,9 +8,11 @@ export default defineConfig({
     outDir: "../dist",
     rollupOptions: {
       input: {
+        // eslint-disable-next-line no-undef
         main: resolve(__dirname, "src/index.html"),
-        conditions: resolve(__dirname, "src/conditions.html")
-      }
-    }
-  }
+        // eslint-disable-next-line no-undef
+        conditions: resolve(__dirname, "src/conditions.html"),
+      },
+    },
+  },
 });

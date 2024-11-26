@@ -48,7 +48,7 @@ function footerTemplate(info) {
         </div>
         <h4 class= "contactinfo">Phone: </h4>
         <p> ${voice} </p>
-    </section>`
+    </section>`;
 }
 
 function setfooterInfo(data){
@@ -57,4 +57,30 @@ function setfooterInfo(data){
     footerElement.innerHTML = footerHtml;
 }
 
-export {setHeaderInfo, setfooterInfo};
+function enableNavigation() {
+    const menuButton = document.querySelector("#global-nav-toggle");
+    
+    menuButton.addEventListener("click", (ev) => {
+      let target = ev.target.closest("button");
+      if(!target) return;
+      
+      const opentarget = document.querySelector(".global-nav").classList.toggle("show");
+      
+      if(target.tagName === "BUTTON"){
+        document.querySelector(".global-nav").classList.contains("show");
+        if(opentarget){
+            target.setAttribute("aria-expanded", "true");
+          }
+          else{
+            target.setAttribute("aria-expanded", "false");
+          }
+      }
+     
+      console.log("toggle");
+    });
+  }
+
+  enableNavigation();
+
+
+export {setHeaderInfo, setfooterInfo, enableNavigation};
