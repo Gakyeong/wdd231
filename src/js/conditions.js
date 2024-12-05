@@ -1,4 +1,8 @@
-import { setHeaderInfo, setfooterInfo, park } from "./setHeaderFooter.mjs";
+import {
+  setHeaderInfo,
+  setfooterInfo,
+  enableNavigation,
+} from "./setHeaderFooter.mjs";
 import {
   getParkData,
   getAlertData,
@@ -14,6 +18,7 @@ async function getData() {
   setHeaderInfo(parkData);
   setfooterInfo(parkData);
   setAlertinfo(AlertData);
+  enableNavigation();
 
   function getAlertCategory(category) {
     let alerttype = "";

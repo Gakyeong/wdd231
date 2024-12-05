@@ -110,11 +110,9 @@ a:link,
 a:visited {
   color: var(--bs-link-color);
   text-decoration: none;
-  
 }
 a:hover {
   color: var(--bs-link-hover-color);
-
 }
 /* header */
 .global-header {
@@ -123,35 +121,36 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: row; 
+  flex-direction: row;
 }
 
-.global-header .site-title{
+.global-header .site-title {
   color: white;
   font-size: var(--bs-body-font-size);
   font-family: var(--bs-body-font-family);
 
   display: flex;
   align-items: center;
-  margin:0 5px;
+  margin: 0 5px;
 }
 
-.global-header__right{
+.global-header__right {
   display: flex;
   align-items: center;
   margin-left: auto;
   margin-right: 10px;
 }
 
-.global-header__right a, .global-header__right button{
+.global-header__right a,
+.global-header__right button {
   color: white;
-  font-size: 18px; 
-  text-decoration: none; 
+  font-size: 18px;
+  text-decoration: none;
   background-color: black;
   border: none;
 }
 
-.global-header .icon{
+.global-header .icon {
   width: 40px;
   height: 40px;
   padding-right: 10px;
@@ -165,29 +164,30 @@ a:hover {
   transition: all 0.5s;
 
   color: white;
-  font-size: 18px; 
-  text-decoration: none; 
+  font-size: 18px;
+  text-decoration: none;
   background-color: black;
-  border: none; 
+  border: none;
   padding-left: 10px;
-   
 }
-.global-nav a, .global-nav button{
+.global-nav a,
+.global-nav button {
   color: white;
-  font-size: 18px; 
-  text-decoration: none; 
+  font-size: 18px;
+  text-decoration: none;
   background-color: black;
   border: none;
   cursor: pointer;
 }
-.global-nav .icon{
+.global-nav .icon {
   width: 40px;
   height: 40px;
   padding-right: 5px;
+  --icon-color: white;
 }
 .global-nav__toggle {
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 .global-nav__toggle--closed {
@@ -205,12 +205,54 @@ a:hover {
 .global-nav__toggle[aria-expanded="true"] .global-nav__toggle--open {
   display: flex;
 }
-
 .global-nav.show {
   max-height: 1000px;
+  padding: 0;
 }
 
-
+/* submenu */
+.global-nav__submenu {
+  max-height: 0;
+  overflow: hidden;
+  font-size: 0.8em;
+  transition: max-height 0.5s ease;
+}
+.global-nav__submenu.show {
+  max-height: 1000px;
+  display: block;
+}
+.global-nav__submenu a:hover {
+  text-decoration: underline;
+}
+.global-nav__section-heading {
+  color: var(--bs-chathams-blue-3);
+  margin-left: 10px;
+}
+.global-nav__list {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+  border-top: 1px solid #444;
+}
+.global-nav__split-button a {
+  width: 100%;
+  margin-left: 10px;
+  background-color: var(--bs-gray-800);
+}
+.global-nav__split-button {
+  display: flex;
+  align-items: center;
+  background-color: var(--bs-gray-800);
+}
+.global-nav__split-button:hover,
+.global-nav__split-button a:hover,
+.global-nav__split-button button:hover {
+  background-color: var(--bs-gray-900);
+}
+.global-nav__split-button__toggle .icon.rotate {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
 /* Skip links styling */
 .skip-links ul {
   list-style-type: none;
@@ -253,22 +295,22 @@ a:hover {
   border-right: 13px solid transparent;
 }
 .hero-banner {
-  position: relative; 
+  position: relative;
 }
 .hero-banner__content {
-  position: absolute; 
+  position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.75); 
-  color: white; 
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: left; 
-  padding: 20px; 
-  height: 20%; 
-  width: 100%; 
+  justify-content: left;
+  padding: 20px;
+  height: 20%;
+  width: 100%;
 }
 
 .hero-banner__content a:link {
@@ -276,7 +318,6 @@ a:hover {
   color: white;
   font-family: var(--bs-body-font-family);
   padding-right: 10px;
-  
 }
 .hero-banner__content p {
   font-size: var(--bs-bodyp-font-size);
@@ -287,24 +328,23 @@ a:hover {
 
 /* Utility styles */
 
-.park-nav{
+.park-nav {
   background-color: #000;
 }
 
-.park-nav .icon{
+.park-nav .icon {
   width: 60px;
   height: 60px;
   padding-right: 5px;
 }
 
-.park-nav ul{
+.park-nav ul {
   padding: 10px;
   margin: 0 auto;
 
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-
 }
 
 .park-nav a:link {
@@ -312,16 +352,16 @@ a:hover {
   font-family: var(--bs-body-font-family);
 
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  text-decoration: none; 
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
   text-align: center;
 }
 
 .park-nav span {
-  margin-bottom: 5px; 
-  font-size: 14px; 
-  font-weight: bold; 
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
 }
 .visually-hidden {
   position: absolute;
@@ -342,36 +382,37 @@ svg {
 }
 
 /* main */
-main{
-  margin:0 auto;
+main {
+  margin: 0 auto;
   padding: 0 20px;
 }
-.introtitle{
+.introtitle {
   font-size: 2rem;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
-.introdescript{
+.introdescript {
   padding-bottom: 20px;
 }
-.infoTitle{
-  color:black;
+.infoTitle {
+  color: black;
 }
-.infodescript{
+.infodescript {
   padding-bottom: 20px;
 }
 /* footer */
-footer{
+footer {
   margin: 0 auto;
   padding: 20px 20px 0 20px;
-  background-image: url('https://byui-cse.github.io/wdd231-course/images/topo_pattern.png');
+  background-image: url("https://byui-cse.github.io/wdd231-course/images/topo_pattern.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
-.contact h3{
-  font-family: 'Courier New', Courier, monospace;
+.contact h3 {
+  font-family: "Courier New", Courier, monospace;
 }
-.contactinfo h4{
+.contactinfo h4 {
   font-weight: var(--bs-body-font-weight);
 }
 /* alert */
@@ -387,44 +428,83 @@ footer{
 .alert-caution {
   color: var(--alert-caution);
 }
-.alertscontent ul{
+.alertscontent ul {
   list-style-type: none;
   padding: 0;
 }
-.alert .icon{
+.alert .icon {
   background-color: white;
   width: 30%;
   padding-right: 30px;
-  
 }
-.alert{
+.alert {
   display: flex;
   align-items: flex-start;
-  border-bottom: 1px solid var(--bs-grey-3);  
+  border-bottom: 1px solid var(--bs-grey-3);
 }
-/* how can I change h3 by alerts, icon background */
 
 /* visitor */
-.center{
-  border-bottom: 1px solid var(--bs-grey-3); 
+.center {
+  border-bottom: 1px solid var(--bs-grey-3);
 }
-.visitorcontent ul{
+.visitorcontent ul {
   padding: 0;
 }
 
 /* activities */
-.activitiescontent ul{
+.activitiescontent ul {
   padding-bottom: 10px;
 }
 
-@media screen and (min-width: 1200px){
-  .info{
+@media screen and (min-width: 1200px) {
+  .info {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
   }
-  .infocontent{
+  .infocontent {
     width: 30%;
+  }
+  /* nav */
+  .global-nav {
+    display: none;
+  }
+  .global-nav.show {
+    display: flex;
+    max-height: fit-content;
+  }
+  .global-nav__section-heading {
+    display: none;
+  }
+  .global-nav__list:first-of-type {
+    display: none;
+  }
+  .global-nav__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .global-nav__split-button,
+  .global-nav__split-button a {
+    background-color: black;
+    padding: 10px;
+    font-weight: bold;
+  }
+  .global-nav__split-button:hover,
+  .global-nav__split-button a:hover {
+    background-color: black;
+  }
+  .global-nav__split-button__toggle {
+    display: none;
+  }
+  .global-nav__submenu {
+    display: flex;
+    flex-direction: column;
+    max-height: fit-content;
+  }
+  .global-nav__submenu li {
+    list-style: none;
+    margin: 10px;
   }
 }
