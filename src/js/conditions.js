@@ -14,10 +14,12 @@ async function getData() {
   const parkData = await getParkData();
   const AlertData = await getAlertData();
   const visitorData = await getVisitorCenterData();
+  // console.log(visitorData);
 
   setHeaderInfo(parkData);
   setfooterInfo(parkData);
   setAlertinfo(AlertData);
+
   enableNavigation();
 
   function getAlertCategory(category) {
@@ -59,6 +61,7 @@ async function getData() {
     return `
         <div class="center">
             <h3>${info.name} </h3>
+            <h4><a href="visitor-center.html?id=${info.parkCode}">${info.name}</a></h4>
             <p class="visitordescritp">${info.description}</p>
             <p class="visitordirect">${info.directionsInfo}</p>    
         </div>

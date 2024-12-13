@@ -10,6 +10,9 @@ import {
 
 function setIntroInfo(data) {
   const introElement = document.querySelector(".introcontainer");
+  const parkCode = data.parkCode; // Extract parkCode
+  console.log(parkCode);
+
   if (introElement) {
     const introHtml = introTemplate(data);
     introElement.innerHTML = introHtml;
@@ -18,7 +21,9 @@ function setIntroInfo(data) {
   }
 }
 
-function getmediacardLinks(data) {
+function getmediacardLinks(data, parkCode) {
+  // console.log(data);
+  console.log(parkCode);
   const withUpdatedImages = parkInfoLinks.map((item, index) => {
     item.image = data[index + 2].url;
     return item;
@@ -27,6 +32,7 @@ function getmediacardLinks(data) {
 }
 
 function setmediaCardInfo(parklinkList) {
+  // console.log(parklinkList);
   const cardElement = document.querySelector(".info");
   if (cardElement) {
     const cardHtml = parklinkList.map(mediaCardTemplate).join("");
@@ -38,6 +44,8 @@ function setmediaCardInfo(parklinkList) {
 
 async function init() {
   const parkData = await getParkData();
+  const parkCode = setIntroInfo(parkData);
+  // console.log(parkData);
   const links = getmediacardLinks(parkData.images);
 
   setHeaderInfo(parkData);
